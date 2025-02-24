@@ -9,7 +9,7 @@ import { DataProvider } from './Context/DataContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <DataProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/SoftballStatsApp'>
         <App />
         <ToastContainer />
       </BrowserRouter>  
