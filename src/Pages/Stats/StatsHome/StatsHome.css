@@ -1,0 +1,65 @@
+/* styles for the image and stat box */
+.player-stat-container {
+    display: flex;
+    align-items: center;
+    /* Adjusted for better alignment */
+    justify-content: center;
+    gap: 20px;
+    /* Space between image and stats */
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+    margin: 20px auto;
+}
+
+/* styles for table and add button */
+.stats-table-container {
+    width: 90%;
+    max-width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.add-stat-button {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-stat-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .player-stat-container {
+        flex-direction: column;
+        /* Stack the image and stat box vertically */
+        max-width: 90%;
+        /* Allow more space on smaller screens */
+    }
+
+    .stats-table-container {
+        max-width: 100%;
+        /* Full width for table container */
+    }
+
+    .add-stat-button {
+        width: 100%;
+        /* Make the button full width on mobile */
+        font-size: 14px;
+        /* Smaller font for mobile */
+    }
+}

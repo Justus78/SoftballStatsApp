@@ -1,0 +1,53 @@
+/* General Layout */
+.actions {
+    margin: 20px;
+    text-align: center;
+}
+
+.container {
+    min-height: 80vh;
+    margin: auto;
+}
+
+.add-team-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-team-link:hover {
+    background-color: #0056b3;
+}
+
+.add-team-link:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Grid Layout for Players */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: auto;
+}
+
+@media (max-width:1200px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width:768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on smaller screens */
+        padding: 20px;
+    }
+}

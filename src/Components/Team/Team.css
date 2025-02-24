@@ -1,0 +1,69 @@
+/* team Card Styling */
+.team-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Player Photo Styling */
+.team-photo {
+    width: 80px;
+    /* Smaller size */
+    height: 80px;
+    /* Match width for perfect circle */
+    border-radius: 50%;
+    /* Make it round */
+    object-fit: cover;
+    margin: 0 auto 10px;
+    /* Center horizontally and add bottom margin */
+    display: block;
+    border: 2px solid #007bff;
+    /* Optional: Add border around the image */
+}
+
+/* team Details */
+.team-details h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.team-details p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button-group-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.button-group-btn:hover {
+    background-color: #0056b3;
+}
+
+.button-group-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease-in-out;
+}

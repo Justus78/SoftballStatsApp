@@ -1,0 +1,146 @@
+/* Spinner.css */
+.softball-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.softball-spinner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffcc00;
+    /* Softball yellow */
+    border: 4px solid #ff9900;
+    /* Softball stitching color */
+    position: relative;
+    animation: spin 2s linear infinite;
+}
+
+.stitch {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background-color: #f11010;
+    border-radius: 2px;
+}
+
+.stitch-left-1 {
+    top: 0px;
+    left: 15px;
+    transform: rotate(50deg);
+}
+
+.stitch-left-2 {
+    top: 5px;
+    left: 20px;
+    transform: rotate(58deg);
+}
+
+.stitch-left-3 {
+    top: 12px;
+    left: 22px;
+    transform: rotate(68deg);
+}
+
+.stitch-left-4 {
+    top: 20px;
+    left: 22px;
+    transform: rotate(78deg);
+}
+
+.stitch-left-5 {
+    top: 28px;
+    left: 20px;
+    transform: rotate(88deg);
+}
+
+.stitch-left-6 {
+    top: 35px;
+    left: 18px;
+    transform: rotate(98deg);
+}
+
+.stitch-left-7 {
+    top: 42px;
+    left: 16px;
+    transform: rotate(108deg);
+}
+
+.stitch-left-8 {
+    top: 48px;
+    left: 12px;
+    transform: rotate(120deg);
+
+}
+
+.stitch-left-9 {
+    top: 55px;
+    left: 8px;
+    transform: rotate(130deg);
+}
+
+.stitch-right-1 {
+    top: 0px;
+    right: 15px;
+    transform: rotate(-50deg);
+}
+
+.stitch-right-2 {
+    top: 5px;
+    right: 20px;
+    transform: rotate(-58deg);
+}
+
+.stitch-right-3 {
+    top: 12px;
+    right: 22px;
+    transform: rotate(-68deg);
+}
+
+.stitch-right-4 {
+    top: 20px;
+    right: 22px;
+    transform: rotate(-78deg);
+}
+
+.stitch-right-5 {
+    top: 28px;
+    right: 20px;
+    transform: rotate(-88deg);
+}
+
+.stitch-right-6 {
+    top: 35px;
+    right: 18px;
+    transform: rotate(-98deg);
+}
+
+.stitch-right-7 {
+    top: 42px;
+    right: 16px;
+    transform: rotate(-108deg);
+}
+
+.stitch-right-8 {
+    top: 48px;
+    right: 12px;
+    transform: rotate(-120deg);
+}
+
+.stitch-right-9 {
+    top: 55px;
+    right: 8px;
+    transform: rotate(-130deg);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

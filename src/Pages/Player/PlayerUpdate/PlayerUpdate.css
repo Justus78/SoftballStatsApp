@@ -1,0 +1,121 @@
+.update-player-container {
+    height: 80vh;
+    padding: 20px 8%;
+    margin: auto;
+    display: flex;
+}
+
+.update-player-form {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    padding: 40px;
+    margin: auto;
+    background-color: #1e90ff;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 16px;
+}
+
+/* Form Title */
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+/* Input and Select Styles */
+.update-player-form input,
+.update-player-form select {
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    color: black;
+    margin-top: 5px;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.update-player-form input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(87, 85, 85);
+}
+
+/* Profile Pic Input Styling */
+.profile-pic-label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.profile-pic-input {
+    width: auto;
+}
+
+/* Button Styling */
+.update-player-form button {
+    width: 30%;
+    outline: 0;
+    padding: 12px;
+    background: #f4d03f;
+    color: black;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.update-player-form button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Center Button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+}
+
+/* Team Selection */
+.team-label {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .update-player-container {
+        padding: 15px 5%;
+        height: 90vh;
+    }
+
+    .update-player-form {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        /* Switch to single column layout on small screens */
+    }
+}

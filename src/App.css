@@ -1,0 +1,37 @@
+/* Ensure the full page takes up the viewport height */
+/* html,
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+} */
+
+
+/* Main content area, adjusting for header and footer */
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* @media (max-width:768px) {
+    .main-container {
+        margin-bottom: 300px;
+    }
+
+}
+
+@media (max-width:458px) {
+    .main-container {
+        max-height: 80%;
+    }
+}
+
+@media (max-width:375px) {
+    .main-container {
+        max-height: 500px;
+    }
+} */

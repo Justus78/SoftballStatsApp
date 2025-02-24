@@ -1,0 +1,15 @@
+.image-container {
+    flex: 1;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: contain;
+    /* Keeps the aspect ratio without cropping */
+}
