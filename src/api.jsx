@@ -33,5 +33,6 @@ export async function postToApi(endpoint, data) {
   } catch (error) {
     console.error("API Error:", error);
     return { error: "Network error. Please try again." };
-  }
+  } 
+  
 }
