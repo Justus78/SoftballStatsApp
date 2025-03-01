@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { DataContext } from "../../Context/DataContext";
+import Spinner from "../../Components/Spinner/Spinner"
+import { Link } from "react-router-dom";
 
 const Login = ({ onLogin, onLogout }) => {
   const [userName, setUserName] = useState(""); // State to track user input
@@ -13,11 +15,13 @@ const Login = ({ onLogin, onLogout }) => {
   const [error, setError] = useState(""); // State to track any error message
   const [signInState, setSignInState] = useState("Login"); // set the sign in state
   const { isAuthenticated } = useContext(DataContext);
+  const [loading, setLoading] = useState(false);
 
   // Handle the login form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Reset any previous errors
+    setLoading(true);
 
     // Prepare the login data
     const loginData = {
@@ -30,6 +34,7 @@ const Login = ({ onLogin, onLogout }) => {
       const { error, data } = await postToApi("login", loginData);
 
       if (error) {
+        setLoading(false);
         setError("Incorrect username or password");
         toast.error("Incorrect username or password");
         return;
@@ -43,13 +48,15 @@ const Login = ({ onLogin, onLogout }) => {
       onLogin(data); // Pass the user data to the parent component
       toast.success('Login successful.');
     } catch (err) {
+      setLoading(false);
       setError(err.message); // Display any error message
       toast.error(err.message);
     }
   };
-
+  if (loading) return <Spinner />
   return (
   <>    
+    
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated}/>
     <div className="login">
       {/*<img src="" className="login-logo" alt="" />*/}
@@ -59,7 +66,7 @@ const Login = ({ onLogin, onLogout }) => {
 
           <form onSubmit={handleSubmit}>
               <div>
-                  <label htmlFor="userName" >Username</label>
+                  <label htmlFor="userName" ></label>
                   <input
                       type="text"
                       id="userName"
@@ -69,7 +76,7 @@ const Login = ({ onLogin, onLogout }) => {
                       required />
               </div>
               <div>
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password"></label>
                   <input
                       type="password"
                       id="password"
@@ -79,9 +86,12 @@ const Login = ({ onLogin, onLogout }) => {
                       required />
               </div>
               <div className="button-container">
-                <button type="submit">Login</button>
-                
+                <button type="submit">Login</button>                
               </div>              
+
+              <div className="register_">
+                <p>Need to create an account? <Link to='/register'><span>Register</span></Link></p>
+              </div>
           </form>
           {error && <div className="error-message">{error}</div>}      </div>
     </div>

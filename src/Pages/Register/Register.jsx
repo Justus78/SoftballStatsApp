@@ -6,7 +6,7 @@ import './Register.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { DataContext } from "../../Context/DataContext";
-import { data } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const Register = ({ onRegister, onLogout }) => {
   const [userName, setUserName] = useState("");
@@ -51,36 +51,46 @@ const Register = ({ onRegister, onLogout }) => {
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="userName">Username</label>
+            <label htmlFor="userName"></label>
             <input
               type="text"
               id="userName"
+              placeholder="Username"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required
             />
           </div>
           <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"></label>
             <input
               type="email"
               id="email"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"></label>
             <input
               type="password"
               id="password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit">Register</button>
+
+          <div className="button-container">
+            <button type="submit">Register</button>
+          </div>
+          <div className="login_">
+            <p>Already have an account? <Link to='/login'><span>Login</span></Link></p>
+          </div>
+
         </form>
         {error && <div className="error-message">{error}</div>}
       </div>

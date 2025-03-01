@@ -2,6 +2,7 @@
     padding: 20px 8%;
     display: flex;
     height: 80vh;
+    margin: auto;
 }
 
 .login-logo {
@@ -11,7 +12,7 @@
 .login-form {
     width: 100%;
     max-width: 450px;
-    border-radius: 4px;
+    border-radius: 24px;
     padding: 60px;
     margin: auto;
     background-color: #1e90ff;
@@ -32,7 +33,7 @@
     margin: 12px 0;
     border: 0;
     outline: 0;
-    border-radius: 4px;
+    border-radius: 20px;
     padding: 16px 40px;
     font-size: 16px;
     font-weight: 500;
@@ -51,7 +52,7 @@
     padding: 16px;
     background: #f4d03f;
     color: black;
-    border-radius: 4px;
+    border-radius: 20px;
     font-size: 16px;
     font-weight: 500;
     margin-top: 16px;
@@ -71,6 +72,24 @@
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
+}
+
+.register_ {
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.register_ span {
+    color: black;
+    border: 1px solid black;
+    background-color: #f4d03f;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.register_ span:hover {
+    background-color: #a5870f;
 }
 
 
