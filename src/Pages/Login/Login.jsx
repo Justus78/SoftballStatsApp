@@ -1,36 +1,34 @@
-// src/components/Login.js
 import React, { useContext, useState } from "react";
-import { postToApi } from "../../api"; // Import the API utility
-import "./Login.css"
+import { postToApi } from "../../api";
+import "./Login.css";
 import { toast } from "react-toastify";
-import Navbar from '../../Components/Navbar/Navbar'
-import Footer from '../../Components/Footer/Footer'
+import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import { DataContext } from "../../Context/DataContext";
-import Spinner from "../../Components/Spinner/Spinner"
+import Spinner from "../../Components/Spinner/Spinner";
 import { Link } from "react-router-dom";
 
-const Login = ({ onLogin, onLogout }) => {
-  const [userName, setUserName] = useState(""); // State to track user input
+const Login = ({ onLogin, onRegister, onLogout }) => {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // State to track any error message
-  const [signInState, setSignInState] = useState("Login"); // set the sign in state
+  const [error, setError] = useState("");
   const { isAuthenticated } = useContext(DataContext);
   const [loading, setLoading] = useState(false);
+  const [isLoginHovered, setIsLoginHovered] = useState(false);
+  const [isRegisterHovered, setIsRegisterHovered] = useState(false);
 
-  // Handle the login form submission
-  const handleSubmit = async (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Reset any previous errors
+    setError("");
     setLoading(true);
 
-    // Prepare the login data
-    const loginData = {
-      UserName: userName,
-      Password: password,
+    const loginData = { 
+      UserName: userName, 
+      Password: password 
     };
 
     try {
-      // Send login request to the API
       const { error, data } = await postToApi("login", loginData);
 
       if (error) {
@@ -40,63 +38,161 @@ const Login = ({ onLogin, onLogout }) => {
         return;
       }
 
-      // On success, save the JWT token and user details
-      localStorage.setItem("token", data.token); // Save token in localStorage
-      
-      localStorage.setItem("user", JSON.stringify(data)); // Save user details
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data));
 
-      onLogin(data); // Pass the user data to the parent component
-      toast.success('Login successful.');
+      onLogin(data);
+      toast.success("Login successful.");
     } catch (err) {
       setLoading(false);
-      setError(err.message); // Display any error message
+      setError(err.message);
       toast.error(err.message);
     }
   };
-  if (loading) return <Spinner />
-  return (
-  <>    
+
+  // Handle the register form submission
+    const handleRegisterSubmit = async (e) => {
+      e.preventDefault();
+      setError(""); // Reset previous errors
     
-    <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated}/>
-    <div className="login">
-      {/*<img src="" className="login-logo" alt="" />*/}
-      <div className="login-form">
-       
-          <h1>Login</h1>
+      const registerData = {
+        UserName: userName,
+        Email: email,
+        Password: password,
+      };
+    
+      const { error, data } = await postToApi("register", registerData);
+    
+      if (error) {
+        setError(error); // Show error on screen
+        toast.error(error); // Show error toast
+        return;
+      }
+    
+      // On success, save token and user details
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data));
+    
+      onRegister(data);
+      toast.success("User registered successfully.");
+    };
 
-          <form onSubmit={handleSubmit}>
-              <div>
-                  <label htmlFor="userName" ></label>
+  if (loading) return <Spinner />;
+
+  return (
+    <>
+      <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
+      <div className="container">
+        <div className="login">
+          <div
+            className={`login-box ${isLoginHovered ? "expanded" : ""}`}
+            onMouseEnter={() => setIsLoginHovered(true)}
+            onMouseLeave={() => setIsLoginHovered(false)}
+          >
+            {!isLoginHovered ? (
+              <h2>Login</h2>
+            ) : (
+              <div className="login-form">
+                <h2>Login</h2>
+                <form onSubmit={handleLoginSubmit}>
                   <input
-                      type="text"
-                      id="userName"
-                      placeholder="Username"
-                      value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
-                      required />
+                    type="text"
+                    id="userName"
+                    placeholder="Username"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    required
+                  />
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <div className="button-container">
+                    <button type="submit">Login</button>
+                  </div>
+                  <div className="register_">
+                    <p>
+                      Need to create an account?{" "}
+                      <Link to="/register">
+                        <span>Register</span>
+                      </Link>
+                    </p>
+                  </div>
+                </form>
+                {error && <div className="error-message">{error}</div>}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Register Button */}
+        <div className="register">
+            <div
+              className={`register-box ${isRegisterHovered ? "expanded" : ""}`}
+              onMouseEnter={() => setIsRegisterHovered(true)}
+              onMouseLeave={() => setIsRegisterHovered(false)}
+            >
+              {!isRegisterHovered ? (
+                <h2>Register</h2>
+              ) : (
+          <div className="register-form">
+    
+            <h2>Register</h2>
+            <form onSubmit={handleRegisterSubmit}>
+              <div>
+                <label htmlFor="userName"></label>
+                <input
+                  type="text"
+                  id="userName"
+                  placeholder="Username"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  required
+                />
               </div>
               <div>
-                  <label htmlFor="password"></label>
-                  <input
-                      type="password"
-                      id="password"
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required />
+                <label htmlFor="email"></label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
+              <div>
+                <label htmlFor="password"></label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+    
               <div className="button-container">
-                <button type="submit">Login</button>                
-              </div>              
-
-              <div className="register_">
-                <p>Need to create an account? <Link to='/register'><span>Register</span></Link></p>
+                <button type="submit">Register</button>
               </div>
-          </form>
-          {error && <div className="error-message">{error}</div>}      </div>
-    </div>
-    <Footer />
-  </>
+              <div className="login_">
+                <p>Already have an account? <Link to='/login'><span>Login</span></Link></p>
+              </div>
+    
+            </form>
+            {error && <div className="error-message">{error}</div>}
+          </div>
+          )}
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

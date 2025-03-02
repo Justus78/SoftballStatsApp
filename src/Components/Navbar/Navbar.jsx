@@ -58,7 +58,6 @@ const Navbar = ({ onLogout, isAuthenticated }) => {
           ) : (
             <>
               <li><Link to="/login" className="menu-link">Login</Link></li>
-              <li><Link to="/register" className="menu-link">Register</Link></li>
             </>
           )}
         </ul>

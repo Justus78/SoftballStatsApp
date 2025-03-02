@@ -14,6 +14,8 @@ const Register = ({ onRegister, onLogout }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { isAuthenticated } = useContext(DataContext);
+  const [isHovered, setIsHovered] = useState(false);
+  
 
   // Handle the register form submission
   const handleSubmit = async (e) => {
@@ -45,7 +47,17 @@ const Register = ({ onRegister, onLogout }) => {
   return (
     <>
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated}/>
+
+    {/* Register Button */}
     <div className="register">
+        <div
+          className={`register-box ${isHovered ? "expanded" : ""}`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {!isHovered ? (
+            <h2>Register</h2>
+          ) : (
       <div className="register-form">
 
         <h2>Register</h2>
@@ -94,7 +106,11 @@ const Register = ({ onRegister, onLogout }) => {
         </form>
         {error && <div className="error-message">{error}</div>}
       </div>
+      )}
+      </div>
     </div>
+
+    
     <Footer />
     </>
   );

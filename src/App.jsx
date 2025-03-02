@@ -53,7 +53,7 @@ const { isAuthenticated, setIsAuthenticated } = useContext(DataContext);
         <div className="main-container">
           <Routes>
             <Route path="/" element={isAuthenticated ? <Home onLogout={onLogout} /> : <Navigate to="/login" />} />
-            <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login onLogout={onLogout} onLogin={onLogin} />} />
+            <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <Login onLogout={onLogout} onLogin={onLogin} onRegister={onRegister}/>} />
             <Route path="/register" element={isAuthenticated ? <Navigate to="/" /> : <Register onLogout={onLogout} onRegister={onRegister} />} />
             <Route path="/players" element={isAuthenticated ? <PlayerHome onLogout={onLogout} /> : <Navigate to="/"/>} />
             <Route path="/AddPlayer" element={isAuthenticated ? <AddPlayer onLogout={onLogout} />: <Navigate to="/"/>} />      
