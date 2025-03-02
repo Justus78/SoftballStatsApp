@@ -207,3 +207,36 @@
     .register-form {}
 
 }
+
+@media (max-width: 1050px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .login:hover+.register,
+    .register:hover+.login {
+        display: none;
+    }
+
+
+    .login {
+        margin: 0;
+        padding: 0;
+        max-height: 100px;
+    }
+
+    .register {
+        margin: 0;
+        padding: 0;
+        max-height: 100px;
+    }
+
+    .register-form {}
+
+}
