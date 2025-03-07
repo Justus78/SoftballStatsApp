@@ -31,7 +31,7 @@ const TeamHome = ( {onLogout} ) => {
   return (
     <>
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
-      <div className='container'>
+      <div className='team-home-container'>
         <div className='actions'>
           <Link to="/addTeam" className='add-team-link'>
             Add New Team
@@ -48,8 +48,9 @@ const TeamHome = ( {onLogout} ) => {
 
       ) : (
 
-        <div className="no-teams">
-        <p>No players found. Add some players to start tracking their stats!</p>
+      <div className="no-teams">
+        <h2>No players found.</h2>  
+        <p>Add some players to start tracking their stats!</p>
       </div>
 
       )}

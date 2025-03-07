@@ -7,7 +7,7 @@
 
 .add-player-form {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     border-radius: 4px;
     padding: 40px;
     margin: auto;
@@ -17,15 +17,9 @@
 /* Two-Column Grid */
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Two equal columns */
-    gap: 16px;
-}
-
-/* Labels */
-.add-player-form label {
-    font-size: 16px;
-    font-weight: 500;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    align-items: center;
 }
 
 /* Input and Select Fields */
@@ -42,12 +36,16 @@
     font-size: 16px;
 }
 
-/* Profile Picture Input */
-.profile-pic-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Labels */
+.add-player-form label {
+    font-size: 16px;
+    font-weight: 500;
 }
+
+
+
+/* Profile Picture Input */
+.profile-pic-container {}
 
 .profile-pic-input {
     text-align: center;
@@ -77,7 +75,6 @@
 .team-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 /* Center Button */

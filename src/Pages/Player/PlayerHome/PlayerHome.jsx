@@ -19,7 +19,7 @@ const PlayerHome = ({ onLogout }) => {
   return (
     <>
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated}/>
-    <div className="container">
+    <div className="player-home-container">
       <div className="actions">
         <Link to="/AddPlayer" className="add-player-link">
           Add New Player
@@ -32,9 +32,13 @@ const PlayerHome = ({ onLogout }) => {
           ))}
         </div>
       ) : (
-        <div className="no-players">
-          <p>No players found. Add some players to start tracking their stats!</p>
-        </div>
+
+        
+          <div className="no-players">
+            <h2>No players found.</h2> 
+            <p>Add some players to start tracking their stats!</p>
+          </div>
+        
       )}
       </div>
       <Footer />

@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.container {
+.team-home-container {
     min-height: 80vh;
     margin: auto;
 }
@@ -35,6 +35,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin: auto;
+}
+
+.no-teams {
+    background-color: rgb(206, 203, 203);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width:1200px) {

@@ -66,8 +66,8 @@ const AddPlayer = ({ onLogout }) => {
   return (
     <>
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
-    <div className="add-player-container">
-      <div className='add-player-form'>
+      <div className="add-player-container">
+        <div className='add-player-form'>
           <h2 className="add-player-title">Add Player</h2>
             <form onSubmit={handleSubmit} encType="multipart/form-data">
               {/* Two-Column Layout */}
@@ -130,7 +130,7 @@ const AddPlayer = ({ onLogout }) => {
                       <label htmlFor="teamId">
                         Team
                       </label>
-                      <select id="teamId" value={teamId} onChange={(e) => setTeamId(e.target.value)} required>
+                      <select id="teamId" value={teamId} onChange={(e) => setTeamId(e.target.value)} >
                           <option value="">Select a team</option>
                           {teams.map((team) => (
                               <option key={team.id} value={team.id}>{team.teamName}</option>
@@ -150,7 +150,7 @@ const AddPlayer = ({ onLogout }) => {
           </form>
 
         </div>
-    </div>
+      </div>
     <Footer />
     </>
   )

@@ -82,7 +82,7 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
   return (
     <>
       <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
-      <div className="container">
+      <div className="login-container">
         <div className="login">
           <div
             className={`login-box ${isLoginHovered ? "expanded" : ""}`}
@@ -114,14 +114,7 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
                   <div className="button-container">
                     <button type="submit">Login</button>
                   </div>
-                  <div className="register_">
-                    <p>
-                      Need to create an account?{" "}
-                      <Link to="/register">
-                        <span>Register</span>
-                      </Link>
-                    </p>
-                  </div>
+                  
                 </form>
                 {error && <div className="error-message">{error}</div>}
               </div>
@@ -180,9 +173,7 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
               <div className="button-container">
                 <button type="submit">Register</button>
               </div>
-              <div className="login_">
-                <p>Already have an account? <Link to='/login'><span>Login</span></Link></p>
-              </div>
+              
     
             </form>
             {error && <div className="error-message">{error}</div>}

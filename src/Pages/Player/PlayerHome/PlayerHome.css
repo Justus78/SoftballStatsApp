@@ -4,9 +4,11 @@
     text-align: center;
 }
 
-.container {
+.player-home-container {
     margin: auto;
     min-height: 80vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .add-player-link {
@@ -36,6 +38,13 @@
     /* Default: 3 columns */
     gap: 15px;
     margin: auto;
+}
+
+.no-players {
+    background-color: rgb(206, 203, 203);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width:1200px) {
