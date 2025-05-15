@@ -1,4 +1,4 @@
-const apiUrl = 'https://softballstatsapi20250111200710.azurewebsites.net/api/team'; // base api
+const apiUrl = 'https://softballstats20250514213612.azurewebsites.net/api/team'; // base api
 
 /**
  * Fetch all teams for the authenticated user.

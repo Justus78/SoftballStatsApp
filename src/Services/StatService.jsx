@@ -1,4 +1,4 @@
-const apiUrl = 'https://softballstatsapi20250111200710.azurewebsites.net/api/stats'; //base api
+const apiUrl = 'https://softballstats20250514213612.azurewebsites.net/api/stats'; //base api
 
 export const getStatsForPlayer = async (token, playerId) => {
     const url = `${apiUrl}/stat/player/${playerId}`

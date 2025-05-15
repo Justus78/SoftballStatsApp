@@ -133,10 +133,11 @@ export const DataProvider = ({ children }) => {
   
 
   return (
-    <DataContext.Provider value={{ players, loadPlayers, loading, deletePlayerById, 
-                                  teams, loadTeams, deleteTeamById, setPlayers, setTeams,
-                                  activePlayer, setActivePlayer, loadStats, deleteStatById,
-                                  currentStats, statsCache, setStatsCache, isAuthenticated, setIsAuthenticated }}>
+    <DataContext.Provider 
+    value={{ players, loadPlayers, loading, deletePlayerById, 
+            teams, loadTeams, deleteTeamById, setPlayers, setTeams,
+            activePlayer, setActivePlayer, loadStats, deleteStatById,
+            currentStats, statsCache, setStatsCache, isAuthenticated, setIsAuthenticated }}>
       {children}
     </DataContext.Provider>
   );

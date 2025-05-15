@@ -1,5 +1,5 @@
 // src/api.js
-export const apiUrl = "https://softballstatsapi20250111200710.azurewebsites.net/api/account";
+export const apiUrl = "https://softballstats20250514213612.azurewebsites.net/api/account";
 
 // Utility function to make a POST request to the API
 export async function postToApi(endpoint, data) {
