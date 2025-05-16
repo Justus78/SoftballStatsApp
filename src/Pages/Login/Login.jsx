@@ -13,10 +13,11 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { isAuthenticated } = useContext(DataContext);
+  const { isAuthenticated  } = useContext(DataContext);
   const [loading, setLoading] = useState(false);
-  const [isLoginHovered, setIsLoginHovered] = useState(false);
-  const [isRegisterHovered, setIsRegisterHovered] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+
+  console.log(isLogin);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -81,61 +82,45 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
 
   return (
     <>
-      <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
+      {/* <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} /> */}
+
       <div className="login-container">
-        <div className="login">
-          <div
-            className={`login-box ${isLoginHovered ? "expanded" : ""}`}
-            onMouseEnter={() => setIsLoginHovered(true)}
-            onMouseLeave={() => setIsLoginHovered(false)}
-          >
-            {!isLoginHovered ? (
-              <h2>Login</h2>
-            ) : (
-              <div className="login-form">
-                <h2>Login</h2>
-                <form onSubmit={handleLoginSubmit}>
-                  <input
-                    type="text"
-                    id="userName"
-                    placeholder="Username"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                    required
-                  />
-                  <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                  <div className="button-container">
-                    <button type="submit">Login</button>
-                  </div>
-                  
-                </form>
-                {error && <div className="error-message">{error}</div>}
+        {/* <div className="login">           
+          <div className="login-form">
+            <h2>Login</h2>
+            <form onSubmit={handleLoginSubmit}>
+              <input
+                type="text"
+                id="userName"
+                placeholder="Username"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <div className="button-container">
+                <button type="submit">Login</button>
               </div>
-            )}
-          </div>
-        </div>
+                
+              </form>
+              {error && <div className="error-message">{error}</div>}
+            </div>          
+          </div> */}
+        
 
         {/* Register Button */}
-        <div className="register">
-            <div
-              className={`register-box ${isRegisterHovered ? "expanded" : ""}`}
-              onMouseEnter={() => setIsRegisterHovered(true)}
-              onMouseLeave={() => setIsRegisterHovered(false)}
-            >
-              {!isRegisterHovered ? (
-                <h2>Register</h2>
-              ) : (
+        <div className="register">    
           <div className="register-form">
     
-            <h2>Register</h2>
-            <form onSubmit={handleRegisterSubmit}>
+            <h2 className="register-title">{isLogin ? 'Login' : "Register"}</h2>
+            <form onSubmit={isLogin ? handleLoginSubmit : handleRegisterSubmit}>
               <div>
                 <label htmlFor="userName"></label>
                 <input
@@ -147,6 +132,8 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
                   required
                 />
               </div>
+
+              {isLogin ? "" :
               <div>
                 <label htmlFor="email"></label>
                 <input
@@ -158,6 +145,8 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
                   required
                 />
               </div>
+              }
+
               <div>
                 <label htmlFor="password"></label>
                 <input
@@ -171,18 +160,20 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
               </div>
     
               <div className="button-container">
-                <button type="submit">Register</button>
+                <button className="login-button" type="submit">{isLogin ? "Login" : "Register"}</button>
               </div>
               
     
             </form>
             {error && <div className="error-message">{error}</div>}
+
+            {isLogin ? <p>need an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>here</button></p> 
+            : <p>Already have an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>here</button></p>}
           </div>
-          )}
+         
           </div>
         </div>
-      </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

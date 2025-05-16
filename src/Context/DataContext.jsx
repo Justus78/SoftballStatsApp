@@ -22,6 +22,14 @@ export const DataProvider = ({ children }) => {
     return token;
   };
 
+  const changeTask = () => {
+    if(task == "Register"){
+      setTask("Login")
+    } else {
+      setTask("Register")
+    }
+  } // end change task
+
 
   // functions for player
   const loadPlayers = useCallback(async () => {
@@ -137,7 +145,8 @@ export const DataProvider = ({ children }) => {
     value={{ players, loadPlayers, loading, deletePlayerById, 
             teams, loadTeams, deleteTeamById, setPlayers, setTeams,
             activePlayer, setActivePlayer, loadStats, deleteStatById,
-            currentStats, statsCache, setStatsCache, isAuthenticated, setIsAuthenticated }}>
+            currentStats, statsCache, setStatsCache, isAuthenticated, setIsAuthenticated,
+            }}>
       {children}
     </DataContext.Provider>
   );
