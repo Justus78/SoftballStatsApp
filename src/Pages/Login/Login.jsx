@@ -84,38 +84,8 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
     <>
       {/* <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} /> */}
 
-      <div className="login-container">
-        {/* <div className="login">           
-          <div className="login-form">
-            <h2>Login</h2>
-            <form onSubmit={handleLoginSubmit}>
-              <input
-                type="text"
-                id="userName"
-                placeholder="Username"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-                required
-              />
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <div className="button-container">
-                <button type="submit">Login</button>
-              </div>
-                
-              </form>
-              {error && <div className="error-message">{error}</div>}
-            </div>          
-          </div> */}
-        
+      <div className="login-container">      
 
-        {/* Register Button */}
         <div className="register">    
           <div className="register-form">
     
@@ -167,8 +137,8 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
             </form>
             {error && <div className="error-message">{error}</div>}
 
-            {isLogin ? <p>need an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>here</button></p> 
-            : <p>Already have an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>here</button></p>}
+            {isLogin ? <p>need an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>Here</button></p> 
+            : <p>Already have an account? click <button className="change-button" onClick={() => setIsLogin(!isLogin)}>Here</button></p>}
           </div>
          
           </div>
