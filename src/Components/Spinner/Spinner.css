@@ -1,9 +1,19 @@
 /* Spinner.css */
-.softball-spinner-container {
+/* .softball-spinner-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+} */
+
+.softball-spinner-container {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+    pointer-events: none;
 }
 
 .softball-spinner {

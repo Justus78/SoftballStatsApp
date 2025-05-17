@@ -29,7 +29,7 @@
     text-align: center;
     transition: transform 0.3s ease;
     /* Smooth hover effect */
-    width: 400px;
+    width: 350px;
 }
 
 .card:hover {
@@ -98,14 +98,6 @@
 }
 
 .card button {
-    /* padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease; */
     border: none;
     outline: none;
     padding: 12px 24px;

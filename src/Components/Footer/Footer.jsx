@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { assets } from '../../assets/assets'
 
 const Footer = () => {
   return (
@@ -11,12 +12,14 @@ const Footer = () => {
           <ul className="social-links">
             <li>
               <a href="https://www.linkedin.com/in/matt-justus-947967239/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
+                <img src={ assets.LinkedIn_logo } alt="LinkedIn Logo" />
+                LinkedIn 
               </a>
             </li>
             <li>
               <a href="https://github.com/Justus78" target="_blank" rel="noopener noreferrer">
-                Github
+                <img src={ assets.GitHub_Logo } alt="" />
+                Github 
               </a>
             </li>
             

@@ -1,6 +1,10 @@
 .footer-container {
-    background-color: #333;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.29);
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     text-align: center;
     position: relative;
@@ -43,24 +47,34 @@
 }
 
 .social-links li {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     /* Adds spacing between social links */
 }
 
 .social-links a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: bold;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
 }
 
 .social-links a:hover {
     text-decoration: underline;
 }
 
+.footer-right p {
+    font-weight: bold;
+}
+
 .footer-bottom {
     margin-top: 20px;
     border-top: 1px solid white;
     padding-top: 10px;
+    font-weight: bold;
 }
 
 @media (max-width:768px) {
