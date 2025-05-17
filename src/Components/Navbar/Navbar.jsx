@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import SoftballLogo from '../SoftballLogo/SoftballLogo';
 
 const Navbar = ({ onLogout, isAuthenticated }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
@@ -50,14 +51,21 @@ const Navbar = ({ onLogout, isAuthenticated }) => {
         <ul className="menu">
           {isAuthenticated ? (
             <>
-              <li><button><Link to="/" className="menu-link">Home</Link></button></li>
-              <li><button><Link to="/teams" className="menu-link">Teams</Link></button></li>
-              <li><button><Link to="/players" className="menu-link">My Players</Link></button></li>
-              <li><button onClick={onLogout}><Link to="/" className="menu-link">Logout</Link></button></li>
+              <li><button  onClick={ () => navigate("/")} className="standard-button">Home</button></li>
+              <li><button onClick={ () => navigate("/teams")} className="standard-button">Teams</button></li>
+              <li><button onClick={ () => navigate("/players")} className="standard-button">My Players</button></li>
+              <li>
+                <button onClick={() => {
+                  onLogout();        // Call logout function
+                  navigate('/');     // Redirect to home
+                }} className="standard-button">
+                  Logout
+                </button>
+              </li>
             </>
           ) : (
             <>
-              <li><Link to="/login" className="menu-link">Login</Link></li>
+              <li><button onClick={ () => navigate("/login")} className="menu-link">Login</button></li>
             </>
           )}
         </ul>

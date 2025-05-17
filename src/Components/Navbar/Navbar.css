@@ -42,36 +42,6 @@
     gap: 24px;
 }
 
-.menu-link {
-    border: none;
-    outline: none;
-    padding: 12px 24px;
-    background: rgba(46, 37, 250, 0.7);
-    padding: 12px 20px;
-    border-radius: 10px;
-    color: white;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.menu-link:hover {
-    color: #e5e7eb;
-    background-color: rgb(13, 21, 180);
-    /* Light gray */
-}
-
-.navbar button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s ease-in-out;
-}
-
-
 /* Mobile Styles */
 .menu-toggle {
     display: none;

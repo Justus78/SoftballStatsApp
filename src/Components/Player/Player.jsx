@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Player.css';
 import altProfilePic from '../../../src/assets/altProfilePic.jpg';
 
 const Player = ({ player, onDelete }) => {
+
+  const navigate = useNavigate();
 
     const handleDelete = () => {
         const confirmed = window.confirm(`Are you sure you want to delete ${player.firstName} ${player.lastName}?`);
@@ -24,9 +26,9 @@ const Player = ({ player, onDelete }) => {
         <p>{player.position}</p>
       </div>
       <div className='button-group'>
-        <Link className='button-group-btn' to={`/updatePlayer/${player.id}`}>Edit Player</Link>
-        <Link className='button-group-btn' to={`/playerStats/${player.id}`}>See Stats</Link>
-        <Link className='button-group-btn' onClick={handleDelete}>Delete Player</Link>
+        <button className='standard-button' onClick={ () => navigate(`/updatePlayer/${player.id}`)}>Edit Player</button>
+        <button className='standard-button' onClick={ () => navigate(`/playerStats/${player.id}`)}>See Stats</button>
+        <button className='standard-button' onClick={ () => handleDelete()}>Delete Player</button>
       </div>
     </div>
   );

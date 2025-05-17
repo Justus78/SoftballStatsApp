@@ -53,26 +53,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-}
-
-.button-group-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: auto;
-    transition: background-color 0.3s ease;
-}
-
-.button-group-btn:hover {
-    background-color: #0056b3;
-}
-
-.button-group-btn:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s ease-in-out;
+    gap: 8px;
 }

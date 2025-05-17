@@ -115,7 +115,7 @@ const PlayerUpdate = ( {onLogout} ) => {
         <h2 className="update-player-title">Update Player</h2>
         {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <div className="form-grid">
+          <div className="update-player-form-grid">
             <div>
               <label htmlFor="firstName">First Name</label>
               <input

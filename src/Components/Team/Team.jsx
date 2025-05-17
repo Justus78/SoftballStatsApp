@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './Team.css'
 import altProfilePic from '../../assets/altProfilePic.jpg'
 
 const Team = ({ team, onDelete }) => {
+
+  const navigate = useNavigate();
 
  const handleDelete = () => {
     const confirmed = window.confirm(`Are you sure you want to delete ${team.teamName}?`);
@@ -24,8 +26,8 @@ const Team = ({ team, onDelete }) => {
                 
               </div>
               <div className='button-group'>
-                <Link className='button-group-btn' to={`/updateTeam/${team.id}`}>Edit Team</Link>
-                <Link className='button-group-btn' onClick={handleDelete}>Delete Team</Link>
+                <button className='standard-button' onClick={ () => navigate(`/updateTeam/${team.id}`)}>Edit Team</button>
+                <button className='standard-button' onClick={ () => handleDelete()}>Delete Team</button>
               </div>
             </div>
   )

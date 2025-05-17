@@ -37,8 +37,8 @@ const StatTable = ({ currentStats, handleDelete, activePlayer}) => {
                                 <td>{stat.stolenBases}</td>
                                 <td>
                                     <div className='button-group'>
-                                        <Link className='button-group-btn' to={`/updateStats/${stat.id}/${activePlayer.id}`}>Edit</Link>
-                                        <button className='button-group-btn' onClick={() => handleDelete(stat)}>Delete</button>
+                                        <Link className='standard-button' to={`/updateStats/${stat.id}/${activePlayer.id}`}>Edit</Link>
+                                        <button className='standard-button' onClick={() => handleDelete(stat)}>Delete</button>
                                     </div>
                                 </td>
                             </tr>

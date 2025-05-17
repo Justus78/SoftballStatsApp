@@ -108,9 +108,9 @@ const TeamUpdate = ( {onLogout} ) => {
                 </div>
 
                 <div className="button-container">
-                  <button type="submit">Update</button>      
+                  <button className='standard-button' type="submit">Update</button>      
 
-                  <button type="button" onClick={handleCancel}>
+                  <button className='standard-button' type="button" onClick={handleCancel}>
                   Cancel
                   </button>     
                 </div>                    

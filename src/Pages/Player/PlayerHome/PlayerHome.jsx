@@ -9,6 +9,7 @@ import Footer from '../../../Components/Footer/Footer'
 
 const PlayerHome = ({ onLogout }) => {
   const { loadPlayers, players, loading, deletePlayerById, isAuthenticated } = useContext(DataContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadPlayers(); // Fetch only if players are not already loaded
@@ -21,9 +22,9 @@ const PlayerHome = ({ onLogout }) => {
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated}/>
     <div className="player-home-container">
       <div className="actions">
-        <Link to="/AddPlayer" className="add-player-link">
+        <button onClick={ () => navigate("/AddPlayer")} className="standard-button">
           Add New Player
-        </Link>
+        </button>
       </div>
       {players && players.length > 0 ? (
         <div className="player-grid">

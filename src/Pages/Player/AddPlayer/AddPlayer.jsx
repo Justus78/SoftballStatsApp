@@ -71,12 +71,13 @@ const AddPlayer = ({ onLogout }) => {
           <h2 className="add-player-title">Add Player</h2>
             <form onSubmit={handleSubmit} encType="multipart/form-data">
               {/* Two-Column Layout */}
-              <div className="form-grid">
+              <div className="add-player-form-grid">
                   <div>
-                      <label htmlFor="firstName">First Name</label>
+                      <label htmlFor="firstName"></label>
                       <input
                           type="text"
                           id="firstName"
+                          placeholder='First Name'
                           value={FirstName}
                           onChange={(e) => setFirstName(e.target.value)}
                           required
@@ -84,10 +85,11 @@ const AddPlayer = ({ onLogout }) => {
                   </div>
 
                   <div>
-                      <label htmlFor="lastName">Last Name</label>
+                      <label htmlFor="lastName"></label>
                       <input
                           type="text"
                           id="lastName"
+                          placeholder='Last Name'
                           value={LastName}
                           onChange={(e) => setLastName(e.target.value)}
                           required
@@ -95,10 +97,11 @@ const AddPlayer = ({ onLogout }) => {
                   </div>
 
                   <div>
-                      <label htmlFor="position">Position</label>
+                      <label htmlFor="position"></label>
                       <input
                           type="text"
                           id="position"
+                          placeholder='Position'
                           value={position}
                           onChange={(e) => setPosition(e.target.value)}
                           required
@@ -106,10 +109,11 @@ const AddPlayer = ({ onLogout }) => {
                   </div>
 
                   <div>
-                      <label htmlFor="number">Jersey Number</label>
+                      <label htmlFor="number"></label>
                       <input
                           type="text"
                           id="number"
+                          placeholder='Number'
                           value={Number}
                           onChange={(e) => setNumber(e.target.value)}
                           required
@@ -117,7 +121,7 @@ const AddPlayer = ({ onLogout }) => {
                   </div>
 
                   <div className="profile-pic-container">
-                      <label htmlFor="profilePic">Player Picture</label>
+                      <label htmlFor="profilePic">Player Photo</label>
                       <input
                           className="profile-pic-input"
                           type="file"
@@ -141,9 +145,9 @@ const AddPlayer = ({ onLogout }) => {
 
               {/* Submit Button */}
               <div className="button-container">
-                  <button type="submit">Add Player</button>
+                  <button className='standard-button' type="submit">Add Player</button>
 
-                  <button type="button" onClick={handleCancel}>
+                  <button className='standard-button' type="button" onClick={handleCancel}>
                     Cancel
                   </button>
               </div>

@@ -97,37 +97,6 @@
 
 }
 
-.card button {
-    border: none;
-    outline: none;
-    padding: 12px 24px;
-    background: rgba(46, 37, 250, 0.7);
-    /* Semi-transparent for depth */
-    color: white;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-}
-
-.card button:hover {
-    background: rgba(40, 30, 231, 0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.1s ease-in-out;
-}
-
-
-
 /* Mobile Styles */
 @media (max-width: 768px) {
     .grid-container {

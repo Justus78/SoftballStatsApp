@@ -77,6 +77,8 @@ export const StatsHome = ( {onLogout} ) => {
     return (
         <>
         <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
+        <div className="stat-container">
+
             <div className="player-stat-container">
                 {/* Player Image */}
                 <div className="image-container">
@@ -102,6 +104,7 @@ export const StatsHome = ( {onLogout} ) => {
                 <StatTable currentStats={currentStats} handleDelete={handleDelete} activePlayer={activePlayer} />
             </div>
             <Footer />
+        </div>
         </>
     );
 };

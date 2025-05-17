@@ -81,7 +81,7 @@
 
 .login-button:hover,
 .change-button:hover {
-    background: rgba(100, 94, 217, 0.9);
+    background: rgba(47, 37, 222, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
