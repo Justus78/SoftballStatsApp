@@ -6,13 +6,6 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-image: url('/bg-01.jpg');
-    background-size: cover;
-    /* Ensures the image covers the entire area */
-    background-repeat: no-repeat;
-    /* Prevents tiling */
-    background-position: center;
-    /* Keeps image centered */
 }
 
 .register {

@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { DataContext } from '../../../Context/DataContext';
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
+import Spinner from '../../../Components/Spinner/Spinner'
 
 const AddStats = ( { onLogout } ) => {
 
@@ -33,9 +34,12 @@ const AddStats = ( { onLogout } ) => {
   const [sacrificeFly, setSacrificeFly] = useState(0);
   const [sacrificeBunt, setSacrificeBunt] = useState(0);
 
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true);
 
     const newStat = {
       PlayerID: id,
@@ -59,6 +63,7 @@ const AddStats = ( { onLogout } ) => {
     };
 
     try {
+
       const token = localStorage.getItem("token");
       const addedStat = await createStats(token, newStat);
 
@@ -72,10 +77,13 @@ const AddStats = ( { onLogout } ) => {
 
 
       toast.success("New stats added successfully!");
+      
       navigate(`/playerStats/${id}`);
     } catch (err) {
       setError(err.message);
       toast.error("Error creating stats, try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,12 +93,14 @@ const AddStats = ( { onLogout } ) => {
 
   return (
     <>
+    {loading ? <Spinner /> :
+    <>
     <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
       <div className="add-stat-container">
         <div className="add-stat-form">
           <h2 className="add-stat-title">Add Player Stats</h2>
               <form onSubmit={handleSubmit}>
-                <div className="form-grid">
+                <div className="add-stat-form-grid">
                 {[
                   { label: "Opponent", state: opponent, setState: setOpponent, type: "text" },
                   { label: "Game Date", state: gameDate, setState: setGameDate, type: "date" },
@@ -124,9 +134,9 @@ const AddStats = ( { onLogout } ) => {
                 ))}
                 </div>
                 <div className="button-container">
-                  <button type="submit">Add Stats</button>
+                  <button className='standard-button' type="submit">Add Stats</button>
 
-                  <button type="button" onClick={handleCancel}>
+                  <button className='standard-button' type="button" onClick={handleCancel}>
                     Cancel
                   </button>  
                 </div>
@@ -134,6 +144,8 @@ const AddStats = ( { onLogout } ) => {
         </div>
       </div>
       <Footer />
+      </>
+    }
     </>
   );
 };

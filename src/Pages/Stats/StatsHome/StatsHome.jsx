@@ -96,9 +96,9 @@ export const StatsHome = ( {onLogout} ) => {
             </div>
 
             <div className="stats-table-container">
-                <Link to={`/addStats/${activePlayer.id}`}>
-                    <button className="add-stat-button">Add New Stat</button>
-                </Link>
+                <button onClick={() => navigate(`/addStats/${activePlayer.id}`)}
+                     className="standard-button">Add New Stat
+                </button>
 
                 { /** stat table component */ }
                 <StatTable currentStats={currentStats} handleDelete={handleDelete} activePlayer={activePlayer} />

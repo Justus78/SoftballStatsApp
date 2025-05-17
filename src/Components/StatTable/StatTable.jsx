@@ -1,8 +1,9 @@
 import React from 'react'
 import './StatTable.css'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 const StatTable = ({ currentStats, handleDelete, activePlayer}) => {
+    const navigate = useNavigate();
   return (
     <>
         {/* Stats Table */}
@@ -37,7 +38,7 @@ const StatTable = ({ currentStats, handleDelete, activePlayer}) => {
                                 <td>{stat.stolenBases}</td>
                                 <td>
                                     <div className='button-group'>
-                                        <Link className='standard-button' to={`/updateStats/${stat.id}/${activePlayer.id}`}>Edit</Link>
+                                        <button className='standard-button' onClick={() => navigate(`/updateStats/${stat.id}/${activePlayer.id}`)}>Edit</button>
                                         <button className='standard-button' onClick={() => handleDelete(stat)}>Delete</button>
                                     </div>
                                 </td>

@@ -7,40 +7,55 @@
 
 .update-player-form {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     border-radius: 4px;
     padding: 40px;
     margin: auto;
-    background-color: #1e90ff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Optional for more depth */
 }
 
 /* Form Grid Layout */
 .update-player-form-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     align-items: center;
 }
 
 /* Form Title */
-h2 {
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 28px;
-    text-align: center;
+.update-player-form h2 {
+    background-color: #f5f5f5;
+    width: fit-content;
+    border-radius: 30px;
+    color: black;
+    margin: auto;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
 }
 
 /* Input and Select Styles */
 .update-player-form input,
 .update-player-form select {
     width: 100%;
-    height: 40px;
+    height: 50px;
     background: #f5f5f5;
     color: black;
-    margin-top: 5px;
-    border-radius: 4px;
-    padding: 10px;
+    margin: 12px 0;
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    padding: 16px 40px;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .update-player-form input::placeholder {
@@ -58,24 +73,6 @@ h2 {
 
 .profile-pic-input {
     width: auto;
-}
-
-/* Button Styling */
-.update-player-form button {
-    width: 30%;
-    outline: 0;
-    padding: 12px;
-    background: #f4d03f;
-    color: black;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.update-player-form button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Center Button */

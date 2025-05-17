@@ -109,93 +109,93 @@ const PlayerUpdate = ( {onLogout} ) => {
 
   return (
     <>
-    <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
-    <div className="update-player-container">
-      <div className="update-player-form">
-        <h2 className="update-player-title">Update Player</h2>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <div className="update-player-form-grid">
-            <div>
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                id="firstName"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
+      <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
+      <div className="update-player-container">
+        <div className="update-player-form">
+          <h2 className="update-player-title">Update Player</h2>
+          {error && <div className="error-message">{error}</div>}
+          <form onSubmit={handleSubmit} encType="multipart/form-data">
+            <div className="update-player-form-grid">
+              <div>
+                <label htmlFor="firstName">First Name</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="lastName">Last Name</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="number">Jersey Number</label>
+                <input
+                  type="number"
+                  id="number"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="position">Position</label>
+                <input
+                  type="text"
+                  id="position"
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="profilePic">Player Picture</label>
+                <input
+                className='profile-pic-input'
+                  type="file"
+                  id="profilePic"
+                  onChange={(e) => setProfilePic(e.target.files[0])}
+                />
+              </div>
+
+              <div className="team-container">
+                <label htmlFor="teamId">
+                  Team
+                </label>
+                <select id="teamId" value={teamId} onChange={(e) => setTeamId(e.target.value)} required>
+                    <option value="">Select a team</option>
+                    {teams.map((team) => (
+                        <option key={team.id} value={team.id}>{team.teamName}</option>
+                    ))}
+                </select>
+              </div>
             </div>
 
-            <div>
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                id="lastName"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="number">Jersey Number</label>
-              <input
-                type="number"
-                id="number"
-                value={number}
-                onChange={(e) => setNumber(e.target.value)}
-                required
-              />
-            </div>
+            <div className="button-container">
+              <button className='standard-button' type="submit">
+                Update
+              </button>
 
-            <div>
-              <label htmlFor="position">Position</label>
-              <input
-                type="text"
-                id="position"
-                value={position}
-                onChange={(e) => setPosition(e.target.value)}
-                required
-              />
+              <button className='standard-button' type="button" onClick={handleCancel}>
+                Cancel
+              </button>
             </div>
-
-            <div>
-              <label htmlFor="profilePic">Player Picture</label>
-              <input
-              className='profile-pic-input'
-                type="file"
-                id="profilePic"
-                onChange={(e) => setProfilePic(e.target.files[0])}
-              />
-            </div>
-
-            <div className="team-container">
-              <label htmlFor="teamId">
-                Team
-              </label>
-              <select id="teamId" value={teamId} onChange={(e) => setTeamId(e.target.value)} required>
-                  <option value="">Select a team</option>
-                  {teams.map((team) => (
-                      <option key={team.id} value={team.id}>{team.teamName}</option>
-                  ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="button-container">
-            <button type="submit">
-              Update
-            </button>
-
-            <button type="button" onClick={handleCancel}>
-              Cancel
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 };

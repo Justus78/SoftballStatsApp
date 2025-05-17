@@ -8,13 +8,16 @@
 
 /* Player Card Styling */
 .player-card {
-    border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 5px;
+    padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(50px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Optional for more depth */
 }
 
 .player-card:hover {
@@ -24,18 +27,24 @@
 
 /* Player Photo Styling */
 .player-photo {
-    width: 80px;
-    /* Smaller size */
+    /* width: 80px;   
     height: 80px;
-    /* Match width for perfect circle */
     border-radius: 50%;
-    /* Make it round */
     object-fit: cover;
     margin: 0 auto 10px;
-    /* Center horizontally and add bottom margin */
     display: block;
-    border: 2px solid #007bff;
-    /* Optional: Add border around the image */
+    border: 2px solid #007bff; */
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Player Details */

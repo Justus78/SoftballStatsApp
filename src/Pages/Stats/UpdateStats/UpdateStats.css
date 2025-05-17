@@ -8,18 +8,25 @@
 
 .update-stat-form {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 4px;
     padding: 40px;
     margin: auto;
-    background-color: #1e90ff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(50px);
+    /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* Optional for more depth */
 }
 
 /* Form Grid Layout for 3 columns */
-.form-grid {
+.update-stat-form-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     /* 3 equal columns */
     gap: 16px;
     margin-bottom: 20px;
@@ -38,9 +45,10 @@ h2 {
     background: #f5f5f5;
     color: black;
     margin: 12px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 16px;
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    padding: 16px 40px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -49,30 +57,6 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     color: rgb(87, 85, 85);
-}
-
-.update-stat-form button {
-    width: 30%;
-    border: 1px solid black;
-    outline: 0;
-    padding: 16px;
-    background: #f4d03f;
-    color: black;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.update-stat-form button:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.update-stat-form button:hover {
-    background-color: #e0c44e;
 }
 
 .button-container {

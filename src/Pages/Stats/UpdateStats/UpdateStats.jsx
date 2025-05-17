@@ -136,7 +136,7 @@ const EditStat = ( {onLogout} ) => {
         <div className="update-stat-form">
           <h2 className="update-stat-title">Edit Player Stat</h2>
           <form onSubmit={handleSubmit}>
-          <div className="form-grid">
+          <div className="update-stat-form-grid">
             <div>
               <label htmlFor="Opponent">Opponent</label>
               <input
@@ -345,9 +345,9 @@ const EditStat = ( {onLogout} ) => {
             </div>
 
             <div className="button-container">
-              <button type="submit">Update Stats</button>
+              <button className='standard-button' type="submit">Update Stats</button>
 
-              <button type="button" onClick={handleCancel}>
+              <button className='standard-button' type="button" onClick={handleCancel}>
                 Cancel
               </button>  
             </div>
