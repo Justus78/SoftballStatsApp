@@ -5,12 +5,19 @@
 @tailwind utilities; */
 
 
-* {
+html,
+body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: #2e4057;
+    background-image: url('/bg-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /* optional: keeps background fixed while scrolling */
+    font-family: 'Poppins', 'Rubik', sans-serif;
 }
