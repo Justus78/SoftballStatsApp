@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import SoftballLogo from '../SoftballLogo/SoftballLogo';
+import assets from '../../assets/assets.js'
 
 const Navbar = ({ onLogout, isAuthenticated }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,7 +45,8 @@ const Navbar = ({ onLogout, isAuthenticated }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="logo">
-          <SoftballLogo /> <span>Softball Stats</span>
+          {/* <SoftballLogo /> <span>Softball Stats</span> */}
+          <img src={assets.site_logo} alt="" className='site-logo' />
         </Link>
 
         {/* Desktop Menu */}
@@ -65,7 +67,7 @@ const Navbar = ({ onLogout, isAuthenticated }) => {
             </>
           ) : (
             <>
-              <li><button onClick={ () => navigate("/login")} className="menu-link">Login</button></li>
+              <li><button onClick={ () => navigate("/login")} className="standard-button">Login</button></li>
             </>
           )}
         </ul>

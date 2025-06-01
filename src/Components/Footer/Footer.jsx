@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { assets } from '../../assets/assets'
+import assets  from '../../assets/assets.js'
 
 const Footer = () => {
   return (
@@ -26,6 +26,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-right">
+          <img src={assets.site_logo} alt="" className='logo-footer' />
           <h2>Contact Us</h2>
           <p>Email: contact@softballstats.com</p>
           <p>Phone: (123) 456-7890</p>

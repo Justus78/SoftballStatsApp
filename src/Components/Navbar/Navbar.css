@@ -31,6 +31,13 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    height: 80px;
+    width: 100px;
+}
+
+.site-logo {
+    height: 80px;
+
 }
 
 .logo span {

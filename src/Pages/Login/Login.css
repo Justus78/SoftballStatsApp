@@ -8,6 +8,12 @@
     width: 100%;
 }
 
+.logo-login {
+    height: 80px;
+    width: 100px;
+    margin: auto;
+}
+
 .register {
     padding: 20px 8%;
     display: flex;

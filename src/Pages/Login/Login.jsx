@@ -7,6 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 import { DataContext } from "../../Context/DataContext";
 import Spinner from "../../Components/Spinner/Spinner";
 import { Link } from "react-router-dom";
+import assets from "../../assets/assets";
 
 const Login = ({ onLogin, onRegister, onLogout }) => {
   const [userName, setUserName] = useState("");
@@ -82,13 +83,14 @@ const Login = ({ onLogin, onRegister, onLogout }) => {
 
   return (
     <>
-      {/* <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} /> */}
+      <Navbar onLogout={onLogout} isAuthenticated={isAuthenticated} />
 
       <div className="login-container">      
 
         <div className="register">    
           <div className="register-form">
-    
+
+            <img src={assets.site_logo} alt="" className="logo-login" />    
             <h2 className="register-title">{isLogin ? 'Login' : "Register"}</h2>
             <form onSubmit={isLogin ? handleLoginSubmit : handleRegisterSubmit}>
               <div>

@@ -77,6 +77,11 @@
     font-weight: bold;
 }
 
+.logo-footer {
+    height: 100px;
+    width: 100px;
+}
+
 @media (max-width:768px) {
     .footer-links {
         flex-direction: column;
